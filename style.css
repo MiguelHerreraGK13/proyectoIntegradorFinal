@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* MENU SUPERIOR */
+.top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+}
+
+.company-name{
+    font-size: 18px;
+}
+
+.profile-section{
+    display: flex;
+    align-items: center;
+}
+.notifications{
+    margin-left: -15px;
+    margin-top: -60px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.profile-pic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* margin-right: 50px;
+    margin-top: -40px; */
+    justify-content: center;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.username{
+    font-size: 16px;
+}
+
+/* Menú Lateral Izquierdo */
+.side-menu {
+    width: 90px;
+    height: 100vh;
+    background-color: #444;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+}
+
+.menu-item {
+    width: 50px;
+    height: 50px;
+    background-color: #555;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.logout {
+    margin-top: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
