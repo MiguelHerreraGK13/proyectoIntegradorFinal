@@ -8,4 +8,10 @@
     --color-4: #21699A;
     --color-5: #64BFE4;
     --color-6: #547F9E;
+    /*Fuentes del proyecto*/
+    --fuente-principal: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--fuente-principal);
 }
