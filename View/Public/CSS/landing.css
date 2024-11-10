@@ -1,0 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
+.dimensiones{
+    width:30px;
+    height:30px;
+}
