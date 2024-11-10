@@ -1,17 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Landing_page</title>
     <!-- Fuentes generales -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <!-- Estilos generales-->
     <link rel="stylesheet" href="../Public/CSS/styles.css">
     <!-- Estilos especificos-->
     <link rel="stylesheet" href="../Public/CSS/landing.css">
+    <!-- Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
-   
+
+    <!-- Barra de navegación-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+        <div class="container-fluid d-flex flex-row">
+            <div class="d-xs-block d-sm-block d-md-block d-lg-none">
+                <a class="navbar-brand col-lg-3 me-0 d-flex flex-row justify-content-lg-around justify-content-md-center justify-content-sm-center justify-content-xs-center"
+                    href="#">
+                    <img src="../IMG/Landing/Logo_color.png" alt="Logo" class="dimensiones">
+                    Life_C&S
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+                aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-lg-evenly justify-content-md-evenly"
+                id="navbarsExample11">
+
+                <div class="d-none d-lg-block">
+                    <a class="navbar-brand col-lg-3 me-0 d-flex flex-row justify-content-around" href="#">
+                        <img src="../IMG/Landing/Logo_color.png" alt="Logo" class="dimensiones">
+                        Life_C&S
+                    </a>
+                </div>
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active d-flex flex-row justify-content-around" aria-current="page"
+                            href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-row justify-content-around" href="#">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-row justify-content-around">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-row justify-content-around">Contáctanos</a>
+                    </li>
+                    <li class="nav-item dropdown d-flex flex-row justify-content-around">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Noticias</a></li>
+                            <li><a class="dropdown-item" href="#">Consejos y guías</a></li>
+                            <li><a class="dropdown-item" href="#">Promociones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-lg-flex col-lg-3 justify-content-lg-end d-flex flex-row justify-content-around">
+                    <button class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
