@@ -23,7 +23,7 @@
         <div class="container-fluid d-flex flex-row">
             <div class="d-xs-block d-sm-block d-md-block d-lg-none">
                 <a class="navbar-brand col-lg-3 me-0 d-flex flex-row justify-content-lg-around justify-content-md-center justify-content-sm-center justify-content-xs-center"
-                    href="#">
+                    href="#inicio">
                     <img src="../IMG/Landing/Logo_color.png" alt="Logo" class="dimensiones">
                     Life_C&S
                 </a>
@@ -36,48 +36,85 @@
                 id="navbarsExample11">
 
                 <div class="d-none d-lg-block">
-                    <a class="navbar-brand col-lg-3 me-0 d-flex flex-row justify-content-around" href="#">
+                    <a class="navbar-brand col-lg-3 me-0 d-flex flex-row justify-content-around" href="#inicio">
                         <img src="../IMG/Landing/Logo_color.png" alt="Logo" class="dimensiones">
                         Life_C&S
                     </a>
                 </div>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active d-flex flex-row justify-content-around" aria-current="page"
-                            href="#">Inicio</a>
+                        <a class="nav-link d-flex flex-row justify-content-around" aria-current="page"
+                            href="#inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex flex-row justify-content-around" href="#">Calculadora</a>
+                        <a class="nav-link d-flex flex-row justify-content-around" href="#calculadora">Calculadora</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex flex-row justify-content-around">Testimonios</a>
+                        <a class="nav-link d-flex flex-row justify-content-around" href="#testimonios">Testimonios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex flex-row justify-content-around">Contáctanos</a>
+                        <a class="nav-link d-flex flex-row justify-content-around" href="#contactanos">Contáctanos</a>
                     </li>
                     <li class="nav-item dropdown d-flex flex-row justify-content-around">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#blog" data-bs-toggle="dropdown"
                             aria-expanded="false">Blog</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Noticias</a></li>
-                            <li><a class="dropdown-item" href="#">Consejos y guías</a></li>
-                            <li><a class="dropdown-item" href="#">Promociones</a></li>
+                            <li><a class="dropdown-item" href="#noticias">Noticias</a></li>
+                            <li><a class="dropdown-item" href="#guias">Consejos y guías</a></li>
+                            <li><a class="dropdown-item" href="#promociones">Promociones</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end d-flex flex-row justify-content-around">
-                    <button class="btn btn-primary">Iniciar Sesión</button>
+                    <button class="btn btn-info">Iniciar Sesión</button>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!--Inicio-->
+    <section id="inicio" class="d-flex flex-column-reverse flex-lg-row">
+        <div class="containerInicio1">
+            <h1>¡Obtén tu seguro de vida con nosotros!</h1>
+            <br>
+            <p>Asegura la tranquilidad que mereces y adquiere la mejor cobertura de seguro de vida para ti y tu familia</p>
+            <br>
+            <button type="button" class="btn btn-info">¡Calcular ahora!</button>
+        </div>
+        <div class="containerInicio2" >
+            <div class="imgLanding1"></div>
+            <!--<div class="imgLanding2 d-none"></div>-->
+        </div>
+    </section>
+
+    <!--Calculadora-->
+    <section id="calculadora">
+
+    </section>
+    <!--Testimonios-->
+    <section id="testimonios">
+
+    </section>
+
+    <!--Blog-->
+        <!--Noticias-->
+         <!--Consejos y guias-->
+         <!--Promociones-->
+    <section id="blog">
+        <section id="noticias"></section>
+        <section id="guias"></section>
+        <section id="promociones"></section>
+    </section>
+    <!--Contactanos-->
+    <section id="contactanos">
+    </section>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="../JS/Landing/landing.js"></script>
 </body>
 
 </html>
