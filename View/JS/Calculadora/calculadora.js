@@ -44,7 +44,9 @@ const primas = {
       do {
           // Obtener los valores del formulario
           const nombre = document.getElementById("nombre").value;
+          const segundoNombre = document.getElementById("segundoNombre").value;
           const apellido = document.getElementById("apellido").value;
+          const segundoApellido = document.getElementById("segundoApellido").value;
           const fechaNacimiento = document.getElementById("fechaNacimiento").value;
           const genero = document.getElementById("genero").value;
           const celular = document.getElementById("celular").value;
@@ -95,7 +97,7 @@ const primas = {
               primaFinal *= 1.10; // Incremento del 10%
           }
   
-          // Aplicar sobrecosto si usa moto y tiene entre 50 años y +
+          // Aplicar sobrecosto si usa moto y tiene entre 51 años y +
           if (usaMoto && edad >51 && edad <= 79) {
               primaFinal *= 1.05; // Incremento del 5%
           }
@@ -105,7 +107,7 @@ const primas = {
   
           // Mostrar el resultado
           document.getElementById("resultado").style.display = "block";
-          document.getElementById("primaResultado").innerText = `La prima para ${nombre} ${apellido} de ${edad} años de edad, considerando un incremento del ${incremento}% y valor asegurado de ${valorAsegurado} millones es: $${primaFinal.toFixed(2)}`;
+          document.getElementById("primaResultado").innerText = `La prima para ${nombre} ${segundoNombre} ${apellido} ${segundoApellido} de ${edad} años de edad, considerando un incremento del ${incremento}% y valor asegurado de ${valorAsegurado} millones es: $${primaFinal.toFixed(2)}`;
   
           validacion = true;  // Si todo es correcto, salir del ciclo
       } while (!validacion);  // Continuar hasta que todos los datos sean válidos

@@ -44,50 +44,65 @@
         <!-- Contenido principal: calculadora-->
         <div class="container">
             <h1>Cálculo de Prima de Seguro</h1>
-            <div class="camposFormulario row">
-                <form id="formularioSeguro" class="col-12">
-                    <div class="col-md-6 mb-3">
-                        <label for="nombreUno">Primer Nombre:</label>
-                        <input type="text" id="nombreUno" class="form-control" required>
+            
+            <form id="formularioSeguro">
+                <!-- Datos del Asegurado -->
+                <div class="input-group">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="nombreDos">Segundo Nombre:</label>
-                        <input type="text" id="nombreDos" class="form-control" required>
+                    <div>
+                        <label for="segundoNombre">Segundo Nombre:</label>
+                        <input type="text" id="segundoNombre">
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="apellidoUno">Primer Apellido:</label>
-                        <input type="text" id="apellidoUno" class="form-control" required>
+                </div>
+        
+                <div class="input-group">
+                    <div>
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" required>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="apellidoDos">Segundo Apellido:</label>
-                        <input type="text" id="apellidoDos" class="form-control" required>
+                    <div>
+                        <label for="segundoApellido">Segundo Apellido:</label>
+                        <input type="text" id="segundoApellido">
                     </div>
-                    <div class="col-md-6 mb-3">
+                </div>
+        
+                <div class="input-group">
+                    <div>
                         <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-                        <input type="date" id="fechaNacimiento" class="form-control" required>
+                        <input type="date" id="fechaNacimiento" required>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div>
                         <label for="genero">Género:</label>
-                        <select id="genero" class="form-control" required>
+                        <select id="genero" required>
                             <option value="hombre">Hombre</option>
                             <option value="mujer">Mujer</option>
                         </select>
                     </div>
-                    <div class="col-md-6 mb-3">
+                </div>
+        
+                <div class="input-group">
+                    <div>
                         <label for="celular">Celular:</label>
-                        <input type="tel" id="celular" class="form-control" pattern="[0-9]{9}" required>
+                        <input type="tel" id="celular" pattern="[0-9]{9}" required>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div>
                         <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" required>
                     </div>
-                    <div class="col-md-6 mb-3">
+                </div>
+        
+                <div class="input-group">
+                    <div class="checkbox-group">
                         <label for="usaMoto">¿Usa moto frecuentemente?</label>
-                        <input type="checkbox" id="usaMoto" class="form-check-input">
+                        <input type="checkbox" id="usaMoto">
+                        <img src="https://img.icons8.com/ios/452/motorcycle.png" alt="Moto Icon">
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div>
                         <label for="incremento">Porcentaje de Incremento:</label>
-                        <select id="incremento" class="form-control" required>
+                        <select id="incremento" required>
                             <option value="3">3%</option>
                             <option value="4">4%</option>
                             <option value="5">5%</option>
@@ -96,17 +111,15 @@
                             <option value="8">8%</option>
                         </select>
                     </div>
-                    <div class="col-12 mb-3">
-                        <label for="valorAsegurado">Valor Asegurado (en millones):</label>
-                        <input type="range" id="valorAsegurado" class="form-range" min="50" max="500" step="1" value="50" oninput="actualizarValorAsegurado()">
-                        <p>Valor Asegurado: <span id="valorAseguradoDisplay">50,000,000</span> millones</p>
-                    </div>
-                    <div class="col-12">
-                        <button type="button" class="btn btn-primary w-100" onclick="calcularPrima()">Calcular Prima</button>
-                    </div>
-                </form>
-            </div>
-            
+                </div>
+        
+                <!-- Barra de Progreso para el valor asegurado -->
+                <label for="valorAsegurado">Valor Asegurado (en millones):</label>
+                <input type="range" id="valorAsegurado" min="50" max="500" step="1" value="50" oninput="actualizarValorAsegurado()">
+                <p>Valor Asegurado: <span id="valorAseguradoDisplay">50,000,000</span> millones</p>
+        
+                <button type="button" onclick="calcularPrima()">Calcular Prima</button>
+            </form>
         
             <div class="result" id="resultado">
                 <h3>Resultado:</h3>
@@ -115,8 +128,6 @@
             
             <div class="error" id="error"></div>
         </div>
-
-    </div>
     
 
     <script src="../JS/Calculadora/calculadora.js"></script>
