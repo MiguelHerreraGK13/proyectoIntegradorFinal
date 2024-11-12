@@ -7,6 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    
 }
 
 .sidebar {
@@ -31,7 +32,7 @@ body {
 
 .logout {
     background: linear-gradient(to left, var(--color-1), var(--color-6));
-    color: var(--color-5);
+    color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
@@ -89,4 +90,70 @@ body {
     border-radius: 50%;
     margin-left: 10px;
 }
+/* inicio de estilos calculadora */
 
+.container {
+    max-width: 600px;
+    margin-top: 5%;
+    padding: 15px;
+    background: linear-gradient(to left, rgb(179, 218, 255), var(--color-5));
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    
+}
+
+.camposFormulario {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    text-align: center;
+    color: var(--color-1);
+}
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+input[type="text"], input[type="date"], input[type="tel"], input[type="email"], select {
+    width: 40%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+button:hover {
+    background-color: #45a049;
+}
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e2f0d9;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    display: none;
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
