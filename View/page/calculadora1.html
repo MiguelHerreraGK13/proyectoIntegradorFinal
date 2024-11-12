@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Prima de Seguro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="date"], input[type="tel"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e2f0d9;
+            border: 1px solid #4CAF50;
+            border-radius: 4px;
+            display: none;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Cálculo de Prima de Seguro</h1>
+    
+    <form id="formularioSeguro">
+        <!-- Datos del Asegurado -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" required>
+
+        <label for="genero">Género:</label>
+        <select id="genero" required>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+
+        <label for="celular">Celular:</label>
+        <input type="tel" id="celular" pattern="[0-9]{9}" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" required>
+
+        <label for="usaMoto">¿Usa moto frecuentemente?</label>
+        <input type="checkbox" id="usaMoto">
+
+        <label for="incremento">Porcentaje de Incremento:</label>
+        <select id="incremento" required>
+            <option value="3">3%</option>
+            <option value="4">4%</option>
+            <option value="5">5%</option>
+            <option value="6">6%</option>
+            <option value="7">7%</option>
+            <option value="8">8%</option>
+        </select>
+
+        <!-- Barra de Progreso para el valor asegurado -->
+        <label for="valorAsegurado">Valor Asegurado (en millones):</label>
+        <input type="range" id="valorAsegurado" min="50" max="500" step="1" value="50" oninput="actualizarValorAsegurado()">
+        <p>Valor Asegurado: <span id="valorAseguradoDisplay">50,000,000</span> millones</p>
+
+        <button type="button" onclick="calcularPrima()">Calcular Prima</button>
+    </form>
+
+    <div class="result" id="resultado">
+        <h3>Resultado:</h3>
+        <p id="primaResultado"></p>
+    </div>
+    
+    <div class="error" id="error"></div>
+</div>
+
+<script>
+// Definir las primas base
+const primas = {
+  hombre: {
+    3: 103929,
+    4: 135889,
+    5: 228291,
+    6: 275362,
+    7: 345099,
+    8: 414835
+  },
+  mujer: {
+    3: 66611,
+    4: 87697,
+    5: 149398,
+    6: 180638,
+    7: 227109,
+    8: 273579
+  }
+};
+
+// Función para calcular la edad a partir de la fecha de nacimiento
+function calcularEdad(fechaNacimiento) {
+    const hoy = new Date();
+    const nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const m = hoy.getMonth() - nacimiento.getMonth();
+    if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+        edad--;
+    }
+    return edad;
+}
+
+// Actualizar el valor asegurado en el display
+function actualizarValorAsegurado() {
+    const valorAsegurado = document.getElementById("valorAsegurado").value;
+    document.getElementById("valorAseguradoDisplay").innerText = valorAsegurado + ',000,000';
+}
+
+// Función para calcular la prima final
+function calcularPrima() {
+    let validacion = false;
+
+    // Ciclo de validación de los campos
+    do {
+        // Obtener los valores del formulario
+        const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
+        const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+        const genero = document.getElementById("genero").value;
+        const celular = document.getElementById("celular").value;
+        const email = document.getElementById("email").value;
+        const usaMoto = document.getElementById("usaMoto").checked;
+        const incremento = parseInt(document.getElementById("incremento").value);
+        const valorAsegurado = parseInt(document.getElementById("valorAsegurado").value);
+
+        // Limpiar el mensaje de error
+        document.getElementById("error").innerHTML = "";
+
+        // Validar los datos
+        const edad = calcularEdad(fechaNacimiento);
+
+        // Verificación de edad
+        if (edad < 18 || edad > 79) {
+            document.getElementById("error").innerHTML = "La edad debe estar entre 18 y 79 años.";
+            validacion = false;
+            break;
+        }
+
+        // Verificación de incremento
+        if (![3, 4, 5, 6, 7, 8].includes(incremento)) {
+            document.getElementById("error").innerHTML = "El incremento debe ser uno de los siguientes: 3, 4, 5, 6, 7, 8.";
+            validacion = false;
+            break;
+        }
+
+        // Verificación de género
+        if (genero !== "hombre" && genero !== "mujer") {
+            document.getElementById("error").innerHTML = "El género debe ser 'hombre' o 'mujer'.";
+            validacion = false;
+            break;
+        }
+
+        // Si todos los datos son válidos, se realiza el cálculo
+        let primaBase = primas[genero][incremento];
+        let variacionEdad = 0.0005 * (edad - 40);
+        let primaFinal = primaBase * (1 + variacionEdad);
+
+        // Aplicar sobrecosto si usa moto y tiene entre 18 y 29 años
+        if (usaMoto && edad >= 18 && edad <= 29) {
+            primaFinal *= 1.15; // Incremento del 15%
+        }
+
+        // Ajustar la prima en relación al valor asegurado
+        primaFinal = primaFinal * (valorAsegurado / 50);
+
+        // Mostrar el resultado
+        document.getElementById("resultado").style.display = "block";
+        document.getElementById("primaResultado").innerText = `La prima para ${nombre} ${apellido} (Edad: ${edad} años) con un incremento del ${incremento}% y valor asegurado de ${valorAsegurado} millones es: $${primaFinal.toFixed(2)}`;
+
+        validacion = true;  // Si todo es correcto, salir del ciclo
+    } while (!validacion);  // Continuar hasta que todos los datos sean válidos
+}
+</script>
+
+</body>
+</html>
+
+
