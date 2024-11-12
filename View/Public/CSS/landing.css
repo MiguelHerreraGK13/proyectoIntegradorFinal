@@ -20,7 +20,7 @@ body{
    /*background: radial-gradient(circle at top center, var(--color-1), var(--color-3), var(--color-4), var(--color-5));*/  
    /*background: radial-gradient(circle at top center, var(--color-4), var(--color-5));*/ 
    /*background: linear-gradient(to right, #184160, #64BFE4);*/
-   
+   /*color: rgb(0, 213, 255);*/
 
 }
 
@@ -31,21 +31,6 @@ body{
     height: 100vh;
 }
 
-/*.containerInicio1,.containerInicio2{
-    width: 50%;
-}
-.imgLanding1,.imgLanding2{
-
-    width: 182px;
-    height: 204px; 
-    background-image:url(https://placehold.co/182x204);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;   
-}
-
-*/
 
 .containerInicio1{
     padding-top: 15%;
@@ -64,78 +49,29 @@ h1{
 }
 
 .containerInicio2{
-    padding-top: 9%;
+    padding-top: 30%;
     padding-right:0%;
-    padding-bottom:8%;
-    padding-left:16%;
+    padding-bottom:0%;
+    padding-left:11%;
     height: 100%;
     display: flex;
     flex-direction: row;
     gap: 25px;
 }
 
-/*
-.containerInicio2{
-    padding-top: 15%;
-    padding-right:0%;
-    padding-bottom:8%;
-    padding-left:3%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-}
-*/
-
 .imgLanding1{
 
-    width: 200px;
-    height: 250px; 
-    background-image:url(../../IMG/Landing/imgLnd1.png);
+    width: 248px;
+    height: 260px; 
+    background-image:url(../../IMG/Landing/ImgLnd1_1.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-     
+    border-radius: 10px;
+    box-shadow: 7px 9px 16px;
+    margin-top: 5%;
 }
 
-/*
-.imgLanding2{
-
-    width: 182px;
-    height: 204px; 
-    background-image:url(../../IMG/Landing/imgLnd2.png);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  
-}
-
-
-.imgLanding1{
-    margin-top: 18%;
-}
-*/
-
-.imgLanding1{
-    margin-top: 10%;
-}
-
-
-@media (min-width: 992px) { 
-    .containerInicio1, .containerInicio2{
-        width: 50%;
-        margin: 0 auto;
-    }
-
-    .containerInicio2{
-        padding-left:4%;
-    }
-
-    .imgLanding1{
-        width: 388px;
-        height: 351px;    
-    }
-}
 
 .navbar-nav .nav-link {
     transition: color 0.5s ease;
@@ -143,4 +79,194 @@ h1{
   
   .navbar-nav .nav-link:hover {
     color: var(--color-5);
+  }
+
+
+@media (min-width: 360px) {
+    .containerInicio2 {
+        padding-top: 56%;
+        padding-right:0%;
+        padding-bottom:0%;
+        padding-left:4%;  
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;      
+    }
+    .imgLanding1{
+        width: 338px;
+        height: 318px;
+        border-radius: 10px;
+        margin-top: 5%;
+    }
+  }
+
+  @media (min-width: 390px) {
+    .containerInicio2 {
+        padding-top: 16%;
+        padding-right:0%;
+        padding-bottom:0%;
+        padding-left:4%;  
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;      
+    }
+    .imgLanding1{
+        width: 338px;
+        height: 318px;
+        border-radius: 10px;
+        margin-top: 5%;
+    }
+  }
+
+  @media (min-width: 412px) {
+    .containerInicio2 {
+        padding-top: 15%;
+        padding-right:0%;
+        padding-bottom:0%;
+        padding-left:9%;  
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;      
+    }
+    .imgLanding1{
+        width: 343px;
+        height: 407px;
+        border-radius: 10px;
+        margin-top: 5%;
+    }
+  }
+
+  @media (min-width: 540px) {
+    .containerInicio2 {
+        padding-top: 64%;
+        padding-right: 0%;
+        padding-bottom: 0%;
+        padding-left: 17%;  
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;      
+    }
+    .imgLanding1{
+        width: 343px;
+        height: 407px;
+        border-radius: 10px;
+        margin-top: 5%;
+    }
+  }
+
+
+/* Tablets en orientación vertical y teléfonos grandes */
+
+@media (min-width: 768px) {
+    .containerInicio2 {
+      padding-top: 6%;
+      padding-right:0%;
+      padding-bottom:0%;
+      padding-left:9%;  
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 0px;      
+  }
+  .imgLanding1{
+      width: 627px;
+      height: 504px;
+      border-radius: 10px;
+      margin-top: 5%;
+  }
+  }
+
+  @media (min-width: 912px) {
+    .containerInicio2 {
+        padding-top: 9%;
+        padding-right: 0%;
+        padding-bottom: 0%;
+        padding-left: 14%;  
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0px;      
+    }
+    .imgLanding1{
+        width: 615px;
+        height: 619px;
+        border-radius: 10px;
+        margin-top: 0px;
+    }
+  }
+  
+  /* Tablets en orientación horizontal */
+  @media (min-width: 992px) {
+
+    .containerInicio1, .containerInicio2{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .containerInicio2{
+      padding-top: 9%;
+      padding-right:0%;
+      padding-bottom:8%;
+      padding-left:4%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+  }
+  
+  .imgLanding1{
+      width: 388px;
+      height: 351px; 
+      margin-top: 5%;
+  }
+
+  }
+  
+  /* Pantallas grandes (desktop) */
+  @media (min-width: 1024px) {
+    .containerInicio1, .containerInicio2{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .containerInicio2{
+        padding-top: 9%;
+        padding-right:0%;
+        padding-bottom:8%;
+        padding-left:0%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+    }
+    
+    .imgLanding1{
+        width: 388px;
+        height: 351px; 
+        margin-top: 5%;
+    }
+
+  }
+  
+  /* Pantallas extra grandes */
+  @media (min-width: 1280px) {
+    .containerInicio2{
+      padding-top: 5%;
+      padding-right:0%;
+      padding-bottom:8%;
+      padding-left:0%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+  }
+  
+  .imgLanding1{
+      width: 477px;
+      height: 481px; 
+      margin-top: 5%;
+  }
+
   }
