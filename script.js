@@ -39,4 +39,16 @@ carouselImages.forEach((img) => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Cargar los datos desde localStorage
+    const datosUsuario = JSON.parse(localStorage.getItem("datosUsuario"));
+
+    // Comprobar si hay datos almacenados
+    if (datosUsuario && datosUsuario.nombre) {
+        // Asignar el nombre de usuario al elemento correspondiente
+        document.getElementById("usernameLink").textContent = datosUsuario.nombre;
+    }
+});
+
+
 
