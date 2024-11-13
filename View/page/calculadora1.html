@@ -28,16 +28,29 @@
             margin-top: 10px;
             display: block;
         }
-        input[type="text"], input[type="date"], input[type="tel"], input[type="email"], select {
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .input-group input, .input-group select {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        input[type="checkbox"] {
-            margin-right: 10px;
+        .input-group label {
+            margin-bottom: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
         }
         input[type="range"] {
             width: 100%;
@@ -69,6 +82,28 @@
             color: red;
             font-weight: bold;
         }
+
+        /* Media Query para pantallas más grandes (más de 500px) */
+        @media (min-width: 500px) {
+            .input-group {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .input-group input, .input-group select {
+                width: 100%;
+            }
+
+            .checkbox-group {
+                justify-content: space-between;
+            }
+        }
+
+        /* Media Query para pantallas más grandes (más de 800px) */
+        @media (min-width: 800px) {
+            .container {
+                max-width: 800px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -78,39 +113,71 @@
     
     <form id="formularioSeguro">
         <!-- Datos del Asegurado -->
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
+        <div class="input-group">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div>
+                <label for="segundoNombre">Segundo Nombre:</label>
+                <input type="text" id="segundoNombre">
+            </div>
+        </div>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" required>
+        <div class="input-group">
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required>
+            </div>
+            <div>
+                <label for="segundoApellido">Segundo Apellido:</label>
+                <input type="text" id="segundoApellido">
+            </div>
+        </div>
 
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" required>
+        <div class="input-group">
+            <div>
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" required>
+            </div>
+            <div>
+                <label for="genero">Género:</label>
+                <select id="genero" required>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+            </div>
+        </div>
 
-        <label for="genero">Género:</label>
-        <select id="genero" required>
-            <option value="hombre">Hombre</option>
-            <option value="mujer">Mujer</option>
-        </select>
+        <div class="input-group">
+            <div>
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" pattern="[0-9]{9}" required>
+            </div>
+            <div>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" required>
+            </div>
+        </div>
 
-        <label for="celular">Celular:</label>
-        <input type="tel" id="celular" pattern="[0-9]{9}" required>
-
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" required>
-
-        <label for="usaMoto">¿Usa moto frecuentemente?</label>
-        <input type="checkbox" id="usaMoto">
-
-        <label for="incremento">Porcentaje de Incremento:</label>
-        <select id="incremento" required>
-            <option value="3">3%</option>
-            <option value="4">4%</option>
-            <option value="5">5%</option>
-            <option value="6">6%</option>
-            <option value="7">7%</option>
-            <option value="8">8%</option>
-        </select>
+        <div class="input-group">
+            <div class="checkbox-group">
+                <label for="usaMoto">¿Usa moto frecuentemente?</label>
+                <input type="checkbox" id="usaMoto">
+                <img src="https://img.icons8.com/ios/452/motorcycle.png" alt="Moto Icon">
+            </div>
+            <div>
+                <label for="incremento">Porcentaje de Incremento:</label>
+                <select id="incremento" required>
+                    <option value="3">3%</option>
+                    <option value="4">4%</option>
+                    <option value="5">5%</option>
+                    <option value="6">6%</option>
+                    <option value="7">7%</option>
+                    <option value="8">8%</option>
+                </select>
+            </div>
+        </div>
 
         <!-- Barra de Progreso para el valor asegurado -->
         <label for="valorAsegurado">Valor Asegurado (en millones):</label>
@@ -129,23 +196,23 @@
 </div>
 
 <script>
-// Definir las primas base
+// Definir las primas base, factor que indica un valor constante de pesosPrima/millonAsegurado
 const primas = {
   hombre: {
-    3: 103929,
-    4: 135889,
-    5: 228291,
-    6: 275362,
-    7: 345099,
-    8: 414835
+    3: 1039,
+    4: 1660.8,
+    5: 2282.6,
+    6: 2904.4,
+    7: 3526.2,
+    8: 4148
   },
   mujer: {
-    3: 66611,
-    4: 87697,
-    5: 149398,
-    6: 180638,
-    7: 227109,
-    8: 273579
+    3: 666.0,
+    4: 1080,
+    5: 1494,
+    6: 1908,
+    7: 2322,
+    8: 2736
   }
 };
 
@@ -175,7 +242,9 @@ function calcularPrima() {
     do {
         // Obtener los valores del formulario
         const nombre = document.getElementById("nombre").value;
+        const segundoNombre = document.getElementById("segundoNombre").value;
         const apellido = document.getElementById("apellido").value;
+        const segundoApellido = document.getElementById("segundoApellido").value;
         const fechaNacimiento = document.getElementById("fechaNacimiento").value;
         const genero = document.getElementById("genero").value;
         const celular = document.getElementById("celular").value;
@@ -216,17 +285,27 @@ function calcularPrima() {
         let variacionEdad = 0.0005 * (edad - 40);
         let primaFinal = primaBase * (1 + variacionEdad);
 
-        // Aplicar sobrecosto si usa moto y tiene entre 18 y 29 años
-        if (usaMoto && edad >= 18 && edad <= 29) {
+        // Aplicar sobrecosto si usa moto y tiene entre 18 y 35 años
+        if (usaMoto && edad >= 18 && edad <= 35) {
             primaFinal *= 1.15; // Incremento del 15%
         }
 
+        // Aplicar sobrecosto si usa moto y tiene entre 36 y 50 años
+        if (usaMoto && edad >36 && edad <= 50) {
+            primaFinal *= 1.10; // Incremento del 10%
+        }
+
+        // Aplicar sobrecosto si usa moto y tiene entre 51 años y +
+        if (usaMoto && edad >51 && edad <= 79) {
+            primaFinal *= 1.05; // Incremento del 5%
+        }
+
         // Ajustar la prima en relación al valor asegurado
-        primaFinal = primaFinal * (valorAsegurado / 50);
+        primaFinal = primaFinal * valorAsegurado;
 
         // Mostrar el resultado
         document.getElementById("resultado").style.display = "block";
-        document.getElementById("primaResultado").innerText = `La prima para ${nombre} ${apellido} (Edad: ${edad} años) con un incremento del ${incremento}% y valor asegurado de ${valorAsegurado} millones es: $${primaFinal.toFixed(2)}`;
+        document.getElementById("primaResultado").innerText = `La prima para ${nombre} ${segundoNombre} ${apellido} ${segundoApellido} de ${edad} años de edad, considerando un incremento del ${incremento}% y valor asegurado de ${valorAsegurado} millones es: $${primaFinal.toFixed(2)}`;
 
         validacion = true;  // Si todo es correcto, salir del ciclo
     } while (!validacion);  // Continuar hasta que todos los datos sean válidos
@@ -235,5 +314,3 @@ function calcularPrima() {
 
 </body>
 </html>
-
-
