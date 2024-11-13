@@ -8,7 +8,9 @@
     <!-- Boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Fuentes generales -->
+    <!-- Boostrap iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+        <!-- Fuentes generales -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <!-- Estilos generales-->
     <link rel="stylesheet" href="../Public/CSS/styles.css">
@@ -47,6 +49,9 @@
                             href="#inicio">Inicio</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link d-flex flex-row justify-content-around" href="#aboutUs">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link d-flex flex-row justify-content-around" href="#calculadora">Calculadora</a>
                     </li>
                     <li class="nav-item">
@@ -73,7 +78,7 @@
     </nav>
 
     <!--Inicio-->
-    <section id="inicio" class="d-flex flex-column-reverse flex-lg-row">
+    <section id="inicio" class="d-flex flex-column-reverse flex-lg-row" class="seccion">
         <div class="containerInicio1">
             <h1>¡Obtén tu seguro de vida con nosotros!</h1>
             <br>
@@ -86,12 +91,61 @@
         </div>
     </section>
 
-    <!--Calculadora-->
-    <section id="calculadora">
+   <!--Sobre nosotros-->
+   <section id="aboutUs" class="seccion">
+        <div class="containerOferta">
+             <p> Miles de adultos confían en nosotros</p>
+        </div>
+        <hr>
+        <div class="containerInfo">
+            <div class="imagenInfo">
+                <div class="imgLandingInfo1"></div>
+            </div>      
+            <div class="textoInfo1">
+                <p class="text-muted">Calcula tu cobertura de seguro de vida</p>
+                <h1>¡Simple y fácil de usar!</h1>
+                <br>
+                <p>Nos especializamos en ofrecer soluciones de seguro de vida simples y fáciles de usar para todos.</p>
+                <br>
+                <button type="button" class="btn btn-info">Aprender más</button>
+            </div>
+        </div>
+        <div class="containerInfo">     
+            <div class="textoInfo2">
+                <p class="text-muted">Lo que nos caracteriza</p>
+                <h1>¡La simplicidad es la clave!</h1>
+                <br>
+                <p>Nuestro enfoque minimalista en seguros de vida nos permite ofrecer servicios de alta calidad sin complejidad ni pasos innecesarios. Nos enfocamos en lo que es importante y nuestros clientes aprecian la eficiencia y efectividad de nuestros servicios</p>
+                <br>
+                <button type="button" class="btn btn-info">Aprender más</button>
+            </div>
+            <div class="imagenInfo">
+                <div class="imgLandingInfo2"></div>
+            </div> 
+        </div>
+        <div class="containerInfo">
+            <div class="imagenInfo">
+                <div class="imgLandingInfo3"></div>
+            </div>      
+            <div class="textoInfo3">
+                <p class="text-muted">Coberturas de seguro de vida asequibles</p>
+                <h1>Cobertura de seguros de vida para...</h1>
+                <br>
+                <p>Tanto si eres joven o mayor, soltero o casado, tenemos soluciones de seguros de vida que pueden ayudarte a proteger lo que más importa para ti.</p>
+                <br>
+                <button type="button" class="btn btn-info">Aprender más</button>
+            </div>
+        </div>
+        
+   </section>
 
+    <!--Calculadora-->
+    <section id="calculadora" class="seccion">
+        
     </section>
+
     <!--Testimonios-->
-    <section id="testimonios">
+    <section id="testimonios" class="seccion">
 
     </section>
 
@@ -99,16 +153,19 @@
         <!--Noticias-->
          <!--Consejos y guias-->
          <!--Promociones-->
-    <section id="blog">
+    <section id="blog" class="seccion">
         <section id="noticias"></section>
         <section id="guias"></section>
         <section id="promociones"></section>
     </section>
     <!--Contactanos-->
-    <section id="contactanos">
+    <section id="contactanos" class="seccion">
     </section>
 
+    <!--Pie de pagina-->
+    <footer>
 
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
