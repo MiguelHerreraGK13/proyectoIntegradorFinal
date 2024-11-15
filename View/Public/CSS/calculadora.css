@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-     border: solid 1px red; 
+     /*border: solid 1px red;*/ 
 }
 
 body {
@@ -166,12 +166,16 @@ input[type="range"] {
 button {
     padding: 20px 20px;
     background-color: transparent;
-    color: white;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+}
+
+.logout{
+    color: black;
 }
 
 .calcularPrima {
@@ -325,4 +329,11 @@ button:hover {
     .main-content {
         margin-left: 0px
     } 
+
+    button{
+        color:white;
+    }
+    .logout{
+        color: white;
+    }
 }
