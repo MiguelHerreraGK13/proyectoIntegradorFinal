@@ -33,7 +33,7 @@ function iniciarSesion() {
 
     if (usuarioEncontrado) {
         alert("Bienvenido " + usuarioEncontrado.nombre);
-        location.href = "dashboard.html";
+        location.href = "home.html";
     } else {
         alert("El usuario y/o contraseña son incorrectos.");
     }
