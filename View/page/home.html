@@ -48,22 +48,16 @@
         <!-- Barra superior -->
         <header class="top-bar">
             <div class="company-name">Life_C&S</div>
-            <div class="user-info">
-                <span class="user-name">Perfil</span>
-                <div class="user-avatar">
-                    <!-- <img src="../IMG/CRUD/iconprofile.png" alt="profile"> -->
-                </div>
-            </div>
         </header>
          
         <!-- Contenido principal: card perfil-->
         <div class="profile-card" >
             <div class="profile-header">
               <div class="profile-photo">
-                <img src="#" alt="Foto de perfil"> <!--funcion para cambiar foto perfil en css-->
+                <img id="profileImage" src="default-profile.png" alt="Foto de perfil"> <!--funcion para cambiar foto perfil en css-->
               </div>
-              <img src="#" alt="Imagen de fondo"> <!--funcion para cambiar foto de fondo en css-->
-              <button class="edit-btn">
+               <!--funcion para cambiar foto de fondo en css-->
+              <button class="edit-btn" id="uploadImageButton">
                 <i class="bi bi-pencil"></i> <!-- Icono de Bootstrap -->
               </button>
             </div>
@@ -72,21 +66,20 @@
               <div class="personal-motto">
                 <p>"Siempre por un mejor futuro"</p>
               </div>
-              <h2 class="name">Nombre Apellido</h2>
+              <h2 class="name"><span id="usernameDisplay"></span></h2>
               <h4 class="role">Usuario</h4>
               <div class="contact-info">
-                <p><strong>Teléfono:</strong> 123-456-7890</p>
-                <p><strong>Email:</strong> ejemplo@correo.com</p>
+                <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                <a href="../page/actualizaDatos.html" class="btn btn-info" id="editButton">Editar Datos</a>
               </div>
               <div class="iconosPie">
                 <i class="bi bi-credit-card-fill fs-1"></i>
                 <i class="bi bi-key-fill fs-1"></i>
                 <i class="bi bi-geo-alt-fill fs-1"></i>
-              </div>
-              
+              </div>         
             </div>
           </div>
 
-    <script src="../JS/home/"></script>
+    <script type="module" src="../JS/Home/home.js"></script>
 </body>
 </html>

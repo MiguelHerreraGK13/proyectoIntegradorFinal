@@ -32,6 +32,10 @@ function iniciarSesion() {
     let usuarioEncontrado = usuarios.find(user => user.correo === loginCorreo.value && user.contra === loginContra.value);
 
     if (usuarioEncontrado) {
+
+        // Guardar el usuario activo en localStorage
+        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioEncontrado));
+       
         alert("Bienvenido " + usuarioEncontrado.nombre);
         location.href = "home.html";
     } else {
@@ -76,3 +80,37 @@ function registrarUsuario() {
     
        
 }
+
+// import { authenticateUser, isUserExists } from '../../../model/user.js';
+
+// document.getElementById('loginForm').addEventListener('submit', (event) => {
+//     event.preventDefault();
+
+//     const username = document.getElementById('username').value;
+//     const password = document.getElementById('password').value;
+//     const errorMessage = document.getElementById('error-message');
+//     const isAuthenticated = authenticateUser(username, password);
+
+//     if (isAuthenticated) {
+//         localStorage.setItem('username', username);
+//         localStorage.setItem('password', password); // Aunque guardar la contraseña no es lo ideal
+//         window.location.href = 'home.html';
+//     } else {
+//         alert('Credenciales incorrectas');
+//     }
+
+//     // Validar si el usuario ya existe
+//     if (isUserExists(username)) {
+//         errorMessage.textContent = 'El nombre de usuario ya está registrado. Por favor, elige otro.';
+//         errorMessage.style.display = 'block';
+//         return;
+//     }
+//     errorMessage.style.display = 'none'; // Oculta el mensaje de error si todo está bien
+
+//     // Guardar usuario en localStorage
+//     localStorage.setItem('username', username);
+//     localStorage.setItem('password', password); // Aunque no es ideal guardar contraseñas aquí
+//     alert('Usuario registrado con éxito. Redirigiendo al Home...');
+//     window.location.href = 'home.html';
+
+// });
