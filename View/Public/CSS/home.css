@@ -164,6 +164,8 @@ button {
     border-top-right-radius: 10px;
     position: relative;
     top: -200px;
+    z-index: -2;
+   
 
   }
   
